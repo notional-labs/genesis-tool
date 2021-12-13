@@ -30,11 +30,11 @@ dir = "genesis.json"
 # blurt = blurt_airdrop.get_blurts()
 # genesis_util.AddVestingAccountsIntoGenesis("genesis.json", blurt)
 
-ion = ion_airdrop.get_ions()
-genesis_util.AddVestingAccountsIntoGenesis("genesis.json", ion)
+# ion = ion_airdrop.get_ions()
+# genesis_util.AddVestingAccountsIntoGenesis("genesis.json", ion)
 
-# validator = old_validator_airdrop.get_old_validators_airdrop()
-# genesis_util.AddVestingAccountsIntoGenesis("genesis.json", validator)
+validator = old_validator_airdrop.get_old_validators_airdrop()
+genesis_util.AddVestingAccountsIntoGenesis("genesis.json", validator)
 
 # notional = {"dig1msezx0rywmz2x3ewhzusfpuf5env5deg5erw63": 62385737000000}
 # genesis_util.AddVestingAccountsIntoGenesis(dir, notional)
