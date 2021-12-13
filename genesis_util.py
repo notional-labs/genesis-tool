@@ -292,3 +292,35 @@ def NukeAccountsWith1(genesis_dir):
     g.close()
     f = open(genesis_dir, "w")
     json.dump(genesis, f, indent=2)
+
+def NukeAccounts(genesis_dir, nuke_addrs):
+    g = open(genesis_dir, "r")
+    genesis = json.load(g)
+
+    nuke_addrs = set(nuke_addrs)
+    bank_balances = GetBankBalancesFromGenesis(genesis)
+    auth_accs = GetAuthAccsFromGenesis(genesis)
+    for id, bank_balance in enumerate(bank_balances):
+        addr = bank_balance["address"]
+        if addr in nuke_addrs:
+            bank_balances[id] = 0
+    for id, auth_acc in enumerate(auth_accs):
+        try:
+            addr = auth_acc["address"]
+            if addr in nuke_addrs:
+                auth_accs[id] = 0 
+        except:
+            addr = auth_acc['base_vesting_account']['base_account']['address']
+            if addr in nuke_addrs:
+                auth_accs[id] = 0 
+    
+    auth_accs = [x for x in auth_accs if x != 0]
+    bank_balances = [x for x in bank_balances if x != 0]
+
+    SetAuthAccsForGenesis(genesis, auth_accs)
+    SetBankBalancesForGenesis(genesis, bank_balances)
+    g.close()
+
+    f = open(genesis_dir, "w")
+    json.dump(genesis, f, indent=2)
+    

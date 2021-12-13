@@ -19,20 +19,28 @@ print(31556926 * 2 + 1639201850 + 86400)
 print(1639201850 + 86400)
 
 
-l = {1: {1: 2}}
+
 
 t = [9, "dsaff", {1:2}]
+
+l = {1: {1: 2}, 2 : t}
+
 
 t = [x for x in t if x != 9]
 
 print(t)
 
 def add1tol(l):
-    d = l[1]
+    d = l[2]
     add2tol(d) 
 
+for i in t:
+    i = 0
+
+print(t)
+
 def add2tol(d):
-    d[1] = 9
+    d.append(6)
 
 add1tol(l)
 print(l)
