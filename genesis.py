@@ -36,13 +36,13 @@ dir = "genesis.json"
 # validator = old_validator_airdrop.get_old_validators_airdrop()
 # genesis_util.AddVestingAccountsIntoGenesis("genesis.json", validator)
 
-notional = {"dig1msezx0rywmz2x3ewhzusfpuf5env5deg5erw63": 62385737000000}
-genesis_util.AddVestingAccountsIntoGenesis(dir, notional)
+# notional = {"dig1msezx0rywmz2x3ewhzusfpuf5env5deg5erw63": 62385737000000}
+# genesis_util.AddVestingAccountsIntoGenesis(dir, notional)
 
 # add new non-vesting accs
 
-# reverse = dig_sale.GetReserve()
-# genesis_util.AddAccountsIntoGenesis("genesis.json", reverse)
+reverse = dig_sale.GetReserve()
+genesis_util.AddAccountsIntoGenesis("genesis.json", reverse)
 
 # liquidity_boostrapping = {"dig13qxgtvk3ttjfygm7qk4ftd8yvz63qv5zx6tuq6": 47385737000000}
 # genesis_util.AddAccountsIntoGenesis(dir, liquidity_boostrapping)
