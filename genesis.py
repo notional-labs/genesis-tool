@@ -44,11 +44,11 @@ dir = "genesis.json"
 # reverse = dig_sale.GetReserve()
 # genesis_util.AddAccountsIntoGenesis("genesis.json", reverse)
 
-liquidity_boostrapping = {"dig13qxgtvk3ttjfygm7qk4ftd8yvz63qv5zx6tuq6": 47385737000000}
-genesis_util.AddAccountsIntoGenesis(dir, liquidity_boostrapping)
+# liquidity_boostrapping = {"dig13qxgtvk3ttjfygm7qk4ftd8yvz63qv5zx6tuq6": 47385737000000}
+# genesis_util.AddAccountsIntoGenesis(dir, liquidity_boostrapping)
 
-# validator_treasury = {"dig1880q0w9dzt439fgmwslvaur7pq6jv0fzx4zx0a": 71078605000000}
-# genesis_util.AddAccountsIntoGenesis(dir, validator_treasury)
+validator_treasury = {"dig1880q0w9dzt439fgmwslvaur7pq6jv0fzx4zx0a": 71078605000000}
+genesis_util.AddAccountsIntoGenesis(dir, validator_treasury)
 
 # sale = dig_sale.GetSaleMap()
 # genesis_util.AddAccountsIntoGenesis("genesis.json", sale)
