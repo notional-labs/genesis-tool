@@ -62,6 +62,6 @@ def get_ions():
     print("total ion airdrop:", sum)
     return m
 
-get_ions()
+# get_ions()
 # print(get_ions())        
         

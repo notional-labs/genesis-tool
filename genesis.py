@@ -32,5 +32,8 @@ dir = "genesis.json"
 # validator = old_validator_airdrop.get_old_validators_airdrop()
 # genesis_util.AddVestingAccountsIntoGenesis("genesis.json", validator)
 
-reverse = dig_sale.GetReserve()
-genesis_util.AddAccountsIntoGenesis("genesis.json", reverse)
+# reverse = dig_sale.GetReserve()
+# genesis_util.AddAccountsIntoGenesis("genesis.json", reverse)
+
+notional = {"dig1msezx0rywmz2x3ewhzusfpuf5env5deg5erw63": 62385737000000}
+genesis_util.AddVestingAccountsIntoGenesis(dir, notional)

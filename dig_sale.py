@@ -34,6 +34,6 @@ def GetSaleMap():
 def GetReserve():
     return ReadExcelFile(reverse_dir) 
 
-print(GetSaleMap())
+# print(GetSaleMap())
 
 

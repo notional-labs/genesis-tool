@@ -30,6 +30,6 @@ def get_old_validators_airdrop():
     
     return m
 
-get_old_validators_airdrop()
+# get_old_validators_airdrop()
 
         
