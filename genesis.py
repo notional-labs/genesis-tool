@@ -19,8 +19,8 @@ genesis_util.NukeAccounts(dir, nukes)
 
 # convert
 
-# airdrop = dfy_airdrop.get_dfy_airdrop()
-# genesis_util.VestingAccountsIntoGenesis("genesis.json", airdrop)
+airdrop = dfy_airdrop.get_dfy_airdrop()
+genesis_util.ConvertAuthBaseAccountsToVestingAccounts("genesis.json", airdrop)
 
 
 
