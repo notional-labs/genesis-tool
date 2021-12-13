@@ -7,6 +7,7 @@ import nuke_accs
 import dig_sale
 import blurt_airdrop
 import ion_airdrop
+import old_validator_airdrop
 
 dir = "genesis.json"
 
@@ -25,5 +26,8 @@ dir = "genesis.json"
 # blurt = blurt_airdrop.get_blurts()
 # genesis_util.AddVestingAccountsIntoGenesis("genesis.json", blurt)
 
-ion = ion_airdrop.get_ions()
-genesis_util.AddVestingAccountsIntoGenesis("genesis.json", ion)
+# ion = ion_airdrop.get_ions()
+# genesis_util.AddVestingAccountsIntoGenesis("genesis.json", ion)
+
+validator = old_validator_airdrop.get_old_validators_airdrop()
+genesis_util.AddVestingAccountsIntoGenesis("genesis.json", validator)
