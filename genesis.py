@@ -11,14 +11,20 @@ import old_validator_airdrop
 
 dir = "genesis.json"
 
-# nukes = nuke_accs.get_nuke_accs()
-# genesis_util.NukeAccounts(dir, nukes)
+# nuke accs
+
+nukes = nuke_accs.get_nuke_accs()
+genesis_util.NukeAccounts(dir, nukes)
+
+
+# convert
 
 # airdrop = dfy_airdrop.get_dfy_airdrop()
-
 # genesis_util.VestingAccountsIntoGenesis("genesis.json", airdrop)
 
-# all vesting accs
+
+
+# add new vesting accs
 
 # total air drop for blurt 23692868000000.008 udig
 # blurt = blurt_airdrop.get_blurts()
@@ -33,7 +39,7 @@ dir = "genesis.json"
 # notional = {"dig1msezx0rywmz2x3ewhzusfpuf5env5deg5erw63": 62385737000000}
 # genesis_util.AddVestingAccountsIntoGenesis(dir, notional)
 
-# all non-vesting accs
+# add new non-vesting accs
 
 # reverse = dig_sale.GetReserve()
 # genesis_util.AddAccountsIntoGenesis("genesis.json", reverse)
