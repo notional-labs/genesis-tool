@@ -13,22 +13,22 @@ dir = "genesis.json"
 
 # nuke accs
 
-nukes = nuke_accs.get_nuke_accs()
-genesis_util.NukeAccounts(dir, nukes)
+# nukes = nuke_accs.get_nuke_accs()
+# genesis_util.NukeAccounts(dir, nukes)
 
 
 # convert
 
-airdrop = dfy_airdrop.get_dfy_airdrop()
-genesis_util.ConvertAuthBaseAccountsToVestingAccounts("genesis.json", airdrop)
+# airdrop = dfy_airdrop.get_dfy_airdrop()
+# genesis_util.ConvertAuthBaseAccountsToVestingAccounts("genesis.json", airdrop)
 
 
 
 # add new vesting accs
 
 # total air drop for blurt 23692868000000.008 udig
-# blurt = blurt_airdrop.get_blurts()
-# genesis_util.AddVestingAccountsIntoGenesis("genesis.json", blurt)
+blurt = blurt_airdrop.get_blurts()
+genesis_util.AddVestingAccountsIntoGenesis("genesis.json", blurt)
 
 # ion = ion_airdrop.get_ions()
 # genesis_util.AddVestingAccountsIntoGenesis("genesis.json", ion)
