@@ -38,6 +38,8 @@ dir = "genesis.json"
 # notional = {"dig1msezx0rywmz2x3ewhzusfpuf5env5deg5erw63": 62385737000000}
 # genesis_util.AddVestingAccountsIntoGenesis(dir, notional)
 
-liquidity_boostrapping = {"dig13qxgtvk3ttjfygm7qk4ftd8yvz63qv5zx6tuq6": 47385737000000}
-genesis_util.AddAccountsIntoGenesis(dir, liquidity_boostrapping)
+# liquidity_boostrapping = {"dig13qxgtvk3ttjfygm7qk4ftd8yvz63qv5zx6tuq6": 47385737000000}
+# genesis_util.AddAccountsIntoGenesis(dir, liquidity_boostrapping)
 
+validator_treasury = {"dig1880q0w9dzt439fgmwslvaur7pq6jv0fzx4zx0a": 71078605000000}
+genesis_util.AddAccountsIntoGenesis(dir, validator_treasury)
