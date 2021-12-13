@@ -29,5 +29,8 @@ dir = "genesis.json"
 # ion = ion_airdrop.get_ions()
 # genesis_util.AddVestingAccountsIntoGenesis("genesis.json", ion)
 
-validator = old_validator_airdrop.get_old_validators_airdrop()
-genesis_util.AddVestingAccountsIntoGenesis("genesis.json", validator)
+# validator = old_validator_airdrop.get_old_validators_airdrop()
+# genesis_util.AddVestingAccountsIntoGenesis("genesis.json", validator)
+
+reverse = dig_sale.GetReserve()
+genesis_util.AddAccountsIntoGenesis("genesis.json", reverse)
