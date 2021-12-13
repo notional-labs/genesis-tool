@@ -126,6 +126,8 @@ def ConvertAuthBaseAccountsToVestingAccounts(genesis_dir, converting_accs):
     bank_balances = GetBankBalancesFromGenesis(genesis)
     map_addr_to_auth_acc_id = MapFromAddressToAuthIdFromGenesis(genesis)
     map_addr_to_bank_balances_id = MapFromAddressToBankIdFromGenesis(genesis)
+
+    sum = 0
     for addr, vesting_amount in converting_accs.items():
         try:
             addr = addr.lower()
@@ -145,11 +147,13 @@ def ConvertAuthBaseAccountsToVestingAccounts(genesis_dir, converting_accs):
             vesting_auth_acc = CreateNewVestingAccount(addr, vesting_amount)
 
             auth_accs[auth_id] = vesting_auth_acc
-            print(vesting_auth_acc)
+            sum += vesting_amount
+            print("vest acc with addr ", addr, " vesting_amount ", vesting_amount)
         except:
             pass
     SetAuthAccsForGenesis(genesis, auth_accs)
 
+    print("total vested ammount:", sum)
     g.close()
     f = open(genesis_dir, "w")
     json.dump(genesis, f, indent=2)
