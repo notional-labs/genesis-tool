@@ -7,13 +7,13 @@ old_genesis = "/Users/khanh/dig/networks/mainnets/dig-1/genesis.json"
 
 miss_lovely_sale_list = "/Users/khanh/Documents/lansauchithemvaofilenay2.xlsx"
 
-# open old_genesis_file from testnet-3
-f = open(old_genesis, "r")
-old_genesis = json.load(f)
+# # open old_genesis_file from testnet-3
+# f = open(old_genesis, "r")
+# old_genesis = json.load(f)
 
-# open new_genesis file from mainnet
-g = open(new_genesis, "r")
-new_genesis = json.load(g)
+# # open new_genesis file from mainnet
+# g = open(new_genesis, "r")
+# new_genesis = json.load(g)
 
 # default_vesting_acc used to make new vesting acc for an addr to put into genesis.json auth
 default_vesting_acc = {
@@ -33,9 +33,9 @@ default_vesting_acc = {
         ],
         "delegated_free": [],
         "delegated_vesting": [],
-        "end_time": "1702402102"
+        "end_time": "1702603072"
     },
-    "start_time": "1639288250"
+    "start_time": "1639531072"
 }
 
 # default_auth_acc used to make new auth acc for an addr to put into genesis.json auth
