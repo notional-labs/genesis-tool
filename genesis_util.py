@@ -232,7 +232,8 @@ def AddVestingAccountsIntoGenesis(genesis_dir, accounts):
     map_addr_to_bank_id = MapFromAddressToBankIdFromGenesis(genesis)
 
     auth_accs = GetAuthAccsFromGenesis(genesis)
-
+    hmmm = ""
+    n = 0
     for addr, vesting_amount in accounts.items():
         if map_addr_to_auth_id.get(addr) != None:
             auth_id = map_addr_to_auth_id[addr]
@@ -246,10 +247,12 @@ def AddVestingAccountsIntoGenesis(genesis_dir, accounts):
                 auth_accs[auth_id] = 0
                 continue
 
-
-            bank_balance = bank_balance[bank_id]
+            hmmm += addr + " " + str(vesting_amount)
+            bank_balance = bank_balances[bank_id]
         
-            SetAmountToBankBalance(bank_balance, vesting_amount)
+            SetAmountToBankBalance(bank_balance, vesting_amount + GetAmountFromBankBalance(
+                bank_balance
+            ))
 
  
         
@@ -257,10 +260,8 @@ def AddVestingAccountsIntoGenesis(genesis_dir, accounts):
 
             auth_accs[auth_id] = auth_vesting_acc
 
-            bank_balance = CreateNewBankBalance(addr, vesting_amount)
 
-            bank_balances[bank_id] = bank_balance
-
+            n += vesting_amount
 
             print("modify acc: " + addr + " " + str(vesting_amount))
         else :
@@ -271,15 +272,15 @@ def AddVestingAccountsIntoGenesis(genesis_dir, accounts):
 
             bank_balance = CreateNewBankBalance(addr, vesting_amount)
             bank_balances.append(bank_balance)
+            n += vesting_amount
             print("add new acc: " + addr + " " + str(bank_balance))
 
     SetBankBalancesForGenesis(genesis, bank_balances)
     SetAuthAccsForGenesis(genesis, auth_accs)
-
+    print("total added udig:", n)
     g.close()
     f = open(genesis_dir, "w")
     json.dump(genesis, f, indent=2)
-
 
 def NukeAccountsWith1(genesis_dir):
     g = open(genesis_dir, "r")
