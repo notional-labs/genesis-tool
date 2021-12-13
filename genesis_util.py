@@ -173,6 +173,7 @@ def AddAccountsIntoGenesis(genesis_dir, accounts):
 
     auth_accs = GetAuthAccsFromGenesis(genesis)
 
+    n = 0
     for addr, amount in accounts.items():
         if map_addr_to_auth_id.get(addr) != None:
 
@@ -194,6 +195,7 @@ def AddAccountsIntoGenesis(genesis_dir, accounts):
             bank_balance = bank_balances[bank_id]
             SetAmountToBankBalance(bank_balance, GetAmountFromBankBalance(bank_balance) + amount)
             print("modify acc: " + addr + " " + str(amount))
+            n += amount
         else :
             if amount < 0:
                 amount = 1
@@ -205,10 +207,13 @@ def AddAccountsIntoGenesis(genesis_dir, accounts):
             bank_balance = CreateNewBankBalance(addr, amount)
 
             bank_balances.append(bank_balance)
+            n += amount
             print("add new acc: " + addr + " " + str(bank_balance))
 
     SetBankBalancesForGenesis(genesis, bank_balances)
     SetAuthAccsForGenesis(genesis, auth_accs)
+
+    print("total added:", n)
     
     g.close()
     f = open(genesis_dir, "w")

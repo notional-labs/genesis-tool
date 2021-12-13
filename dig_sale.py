@@ -1,7 +1,8 @@
 import pandas as pd
 
 
-sale_file_dir = "./sale_map.xlsx"
+sale_file_dir = "sale_map.xlsx"
+reverse_dir = "reserve.xlsx"
 
 def ReadExcelFile(file_dir):
     xls = pd.ExcelFile(file_dir)
@@ -29,6 +30,9 @@ def ReadExcelFile(file_dir):
 
 def GetSaleMap():
     return ReadExcelFile(sale_file_dir)
+
+def GetReserve():
+    return ReadExcelFile(reverse_dir) 
 
 print(GetSaleMap())
 
