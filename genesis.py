@@ -8,13 +8,14 @@ import dig_sale
 import blurt_airdrop
 import ion_airdrop
 import old_validator_airdrop
+import testnet3
 
 dir = "genesis.json"
 
 # nuke accs
 
-# nukes = nuke_accs.get_nuke_accs()
-# genesis_util.NukeAccounts(dir, nukes)
+nukes = [x.lower().strip() for x in nuke_accs.get_nuke_accs()]
+genesis_util.NukeAccounts(dir, nukes)
 
 
 # convert
@@ -53,5 +54,8 @@ dir = "genesis.json"
 # sale = dig_sale.GetSaleMap()
 # genesis_util.AddAccountsIntoGenesis("genesis.json", sale)
 
-founder = dig_sale.GetFounders()
-genesis_util.AddAccountsIntoGenesis(dir, founder)
+# founder = dig_sale.GetFounders()
+# genesis_util.AddAccountsIntoGenesis(dir, founder)
+
+# sub_accs = testnet3.get_substracting_accs()
+# genesis_util.SubstractAccountBalances(dir, sub_accs)

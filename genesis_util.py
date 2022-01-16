@@ -310,6 +310,7 @@ def NukeAccounts(genesis_dir, nuke_addrs):
         addr = bank_balance["address"]
         if addr in nuke_addrs:
             bank_balances[id] = 0
+            print("nuke acc with addr " + addr)
     for id, auth_acc in enumerate(auth_accs):
         try:
             addr = auth_acc["address"]
@@ -330,3 +331,34 @@ def NukeAccounts(genesis_dir, nuke_addrs):
     f = open(genesis_dir, "w")
     json.dump(genesis, f, indent=2)
     
+def SubstractAccountBalances(genesis_dir, substracting_accs):
+    g = open(genesis_dir, "r")
+    genesis = json.load(g)
+
+    bank_balances = GetBankBalancesFromGenesis(genesis)
+
+    nuke_addrs = []
+    n = 0
+
+    for id, bank_balance in enumerate(bank_balances):
+        addr = bank_balance["address"]
+        substracting_amount = substracting_accs.get(addr)
+        if substracting_amount != None:
+            n += substracting_amount
+            new_amount = GetAmountFromBankBalance(bank_balance) - substracting_amount
+            print("modifying addr " + addr + " to " + str(new_amount))
+            if new_amount == 0:
+                nuke_addrs.append(addr)
+                continue
+            SetAmountToBankBalance(bank_balances[id], new_amount)
+        
+    print("total udig subtracted:", n)
+    SetBankBalancesForGenesis(genesis, bank_balances)
+    g.close()
+
+    f = open(genesis_dir, "w")
+    json.dump(genesis, f, indent=2)
+
+    f.close()
+    NukeAccounts(genesis_dir, nuke_addrs)
+
