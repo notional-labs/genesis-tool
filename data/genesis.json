@@ -1,11 +1,11 @@
 {
-  "genesis_time": "2022-02-06T04:24:28.254352185Z",
-  "chain_id": "anone-testnet-1",
+  "genesis_time": "2022-02-06T11:47:42.940121775Z",
+  "chain_id": "anone-tesnet-1",
   "initial_height": "1",
   "consensus_params": {
     "block": {
       "max_bytes": "22020096",
-      "max_gas": "-1",
+      "max_gas": "10000000",
       "time_iota_ms": "1000"
     },
     "evidence": {
@@ -34,21 +34,21 @@
       "accounts": [
         {
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
-          "address": "one1ysgns6d2vawchmcpvzsaj4zyyxjwy45eee5ss5",
+          "address": "one1nvz57f6j56y48eyeqkzq5xgkqcagvqz7ay4kur",
           "pub_key": null,
           "account_number": "0",
           "sequence": "0"
         },
         {
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
-          "address": "one1uut3zvxauhuwf5g6csc8mm0v89z74utvj84rtq",
+          "address": "one1sgdktd56d6ku5ud00dlss0r27u6rx8gq2080fm",
           "pub_key": null,
           "account_number": "0",
           "sequence": "0"
         },
         {
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
-          "address": "one1m8gl2z07p3fz9mtnyx344hknr7ddh3wf8qe63c",
+          "address": "one1egkg8rtnzuck6ju4y7qu3a53x2w2v4axxsf38p",
           "pub_key": null,
           "account_number": "0",
           "sequence": "0"
@@ -279,7 +279,7 @@
       },
       "balances": [
         {
-          "address": "one1ysgns6d2vawchmcpvzsaj4zyyxjwy45eee5ss5",
+          "address": "one1sgdktd56d6ku5ud00dlss0r27u6rx8gq2080fm",
           "coins": [
             {
               "denom": "uan1",
@@ -288,7 +288,7 @@
           ]
         },
         {
-          "address": "one1m8gl2z07p3fz9mtnyx344hknr7ddh3wf8qe63c",
+          "address": "one1nvz57f6j56y48eyeqkzq5xgkqcagvqz7ay4kur",
           "coins": [
             {
               "denom": "uan1",
@@ -297,7 +297,7 @@
           ]
         },
         {
-          "address": "one1uut3zvxauhuwf5g6csc8mm0v89z74utvj84rtq",
+          "address": "one1egkg8rtnzuck6ju4y7qu3a53x2w2v4axxsf38p",
           "coins": [
             {
               "denom": "uan1",
@@ -594,7 +594,7 @@
     },
     "crisis": {
       "constant_fee": {
-        "denom": "stake",
+        "denom": "uan1",
         "amount": "1000"
       }
     },
@@ -634,7 +634,7 @@
       "deposit_params": {
         "min_deposit": [
           {
-            "denom": "stake",
+            "denom": "uan1",
             "amount": "10000000"
           }
         ],
@@ -688,7 +688,7 @@
         "annual_provisions": "0.000000000000000000"
       },
       "params": {
-        "mint_denom": "stake",
+        "mint_denom": "uan1",
         "inflation_rate_change": "0.130000000000000000",
         "inflation_max": "0.200000000000000000",
         "inflation_min": "0.070000000000000000",
