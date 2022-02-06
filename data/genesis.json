@@ -97,6 +97,13 @@
         },
         {
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "one12krersrug2a6f4fck8kuknealdsxxkj95sephs",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
           "address": "one1ux8r8jfve3tckdskeplgxqycnx9ztt5fvlxe96",
           "pub_key": null,
           "account_number": "0",
@@ -266,6 +273,13 @@
         {
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
           "address": "one1d7n5pytjej7dqas6et8rkyd0jtdvfszdqxz8f8",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "one12aag7rh3wzcz20lxz4ajhc5xmg8sakw3mel82j",
           "pub_key": null,
           "account_number": "0",
           "sequence": "0"
@@ -360,6 +374,15 @@
           ]
         },
         {
+          "address": "one12krersrug2a6f4fck8kuknealdsxxkj95sephs",
+          "coins": [
+            {
+              "denom": "uan1",
+              "amount": "10000000000"
+            }
+          ]
+        },
+        {
           "address": "one1ux8r8jfve3tckdskeplgxqycnx9ztt5fvlxe96",
           "coins": [
             {
@@ -577,6 +600,15 @@
         },
         {
           "address": "one1d7n5pytjej7dqas6et8rkyd0jtdvfszdqxz8f8",
+          "coins": [
+            {
+              "denom": "uan1",
+              "amount": "1000000000"
+            }
+          ]
+        },
+        {
+          "address": "one12aag7rh3wzcz20lxz4ajhc5xmg8sakw3mel82j",
           "coins": [
             {
               "denom": "uan1",
