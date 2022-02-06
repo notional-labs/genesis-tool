@@ -160,7 +160,20 @@ def AddAccountsIntoGenesis(genesis_dir, accounts):
     auth_accs = GetAuthAccsFromGenesis(genesis)
 
     n = 0
+
+    # check if there is duplicate account
+    total_acc = set()
+
+    print("account initial len = ", len(accounts))
+
     for addr, amount in accounts.items():
+
+        if addr in total_acc:
+            print(addr + "is duplicate, error")
+            return
+
+        total_acc.add(addr)
+
         if map_addr_to_auth_id.get(addr) != None:
 
             bank_id = map_addr_to_bank_id[addr]
@@ -200,6 +213,7 @@ def AddAccountsIntoGenesis(genesis_dir, accounts):
     SetAuthAccsForGenesis(genesis, auth_accs)
 
     print("total added:", n)
+    print("total acc added:", len(total_acc))
     
     g.close()
     f = open(genesis_dir, "w")

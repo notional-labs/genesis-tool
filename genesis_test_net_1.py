@@ -22,6 +22,8 @@ prefix = os.getenv("ACC_PREFIX")
 # add vesting account into genesis
 # genesis_util.AddVestingAccountsIntoGenesis("data/genesis.json", accs)
 
-accs = gentxs_account_retriever.get_gentxs_accounts("data/gentxs")
+# accs = gentxs_account_retriever.get_gentxs_accounts("data/gentx")
 
-genesis_util.AddAccountsIntoGenesis("data/genesis.json", accs)
+# genesis_util.AddAccountsIntoGenesis("data/genesis.json", accs)
+
+gentxs_account_retriever.get_seeds("data/gentx")
