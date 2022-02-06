@@ -8,7 +8,7 @@ def get_gentxs_account(gentxs_file):
 
     addr = gentxs["body"]["messages"][0]["delegator_address"]
 
-    amount = int(gentxs["body"]["messages"][0]["value"]["amount"])
+    amount = int(gentxs["body"]["messages"][0]["value"]["amount"])*1000
 
     return addr, amount
 
